@@ -30,11 +30,11 @@ def modify_the_line(filename):
             buffer = open("buffer.txt", "r")
             line = buffer.read()
             buffer.close()
-    if not len(line):
+    print(line)
+    try:
+        os.remove("buffer.txt")
+    except FileNotFoundError:
         pass
-    else:
-        print(line)
-    os.remove("buffer.txt")
 
 
 if __name__=="__main__":
